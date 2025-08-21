@@ -25,7 +25,6 @@ export class ApiMoviesService {
   }
 
   public getMovies(searchStr?: string | null): Observable<MovieApiResponse[]> {
-    console.log(searchStr);
     const movies = this._moviesList$.getValue();
 
     if (searchStr) {

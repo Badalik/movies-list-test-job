@@ -1,11 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { first } from 'rxjs';
 
 import { TranslateService } from '@ngx-translate/core';
-import { PrimeNG } from 'primeng/config';
 
-import { THEME_LOCALSTORAGE_NAME } from '@core/constants/localctorage';
+import { LANG_LOCALSTORAGE_NAME, THEME_LOCALSTORAGE_NAME } from '@core/constants/localctorage';
 import { Lang, ThemeMode } from '@core/enums';
 import { ThemeModeService } from '@core/services/theme-mode.service';
 
@@ -21,31 +19,22 @@ export class AppComponent implements OnInit {
 
   private readonly _themeModeService = inject(ThemeModeService);
 
-  constructor(
-    private readonly _primengConfig: PrimeNG,
-    private readonly _translateService: TranslateService,
-  ) {}
+  private readonly _translateService = inject(TranslateService);
 
   public ngOnInit(): void {
     const projectLangs = Object.values(Lang);
     const browserLang = this._translateService.getBrowserLang();
+    const localStorageLang = localStorage.getItem(LANG_LOCALSTORAGE_NAME);
+    const lang = localStorageLang ?? browserLang;
 
     this._translateService.addLangs(projectLangs);
     this._translateService.setDefaultLang(Lang.EN);
 
-    if (typeof browserLang !== 'undefined') {
-      this._translateService.use(projectLangs.some((p) => p === browserLang) ? browserLang : Lang.EN);
+    if (typeof lang !== 'undefined') {
+      this._translateService.use(projectLangs.some((p) => p === lang) ? lang : Lang.EN);
     }
 
     this._keepTheme();
-  }
-
-  public changeLang(lang: Lang): void {
-    this._translateService.use(lang);
-
-    this._translateService.get('primeng')
-      .pipe(first())
-      .subscribe((res) => this._primengConfig.setTranslation(res));
   }
 
   private _keepTheme(): void {

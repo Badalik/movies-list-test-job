@@ -1,13 +1,12 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { first } from 'rxjs';
 
 import { TranslateService } from '@ngx-translate/core';
-import { PrimeNG } from 'primeng/config';
 import { Select } from 'primeng/select';
 
 import { LANG_LOCALSTORAGE_NAME } from '@core/constants/localctorage';
 import { Lang } from '@core/enums';
+import { LangService } from '@core/services/lang.service';
 
 @Component({
   selector: 'app-lang-switcher',
@@ -24,7 +23,7 @@ export class LangSwitcherComponent implements OnInit {
 
   protected options = Object.values(Lang);
 
-  private readonly _primengConfig = inject(PrimeNG);
+  private readonly _langService = inject(LangService);
 
   private readonly _translateService = inject(TranslateService);
 
@@ -34,18 +33,12 @@ export class LangSwitcherComponent implements OnInit {
     this.value = lang;
 
     if (lang !== this._translateService.getCurrentLang()) {
-      this.change(lang);
+      this._langService.change(lang);
     }
   }
 
   public change(lang: string): void {
-    this._translateService.use(lang);
-
-    this._translateService.get('primeng')
-      .pipe(first())
-      .subscribe((res) => this._primengConfig.setTranslation(res));
-
-    localStorage.setItem(LANG_LOCALSTORAGE_NAME, lang);
+    this._langService.change(lang);
   }
 
 }
