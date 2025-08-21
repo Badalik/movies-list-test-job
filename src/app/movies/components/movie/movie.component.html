@@ -2,7 +2,9 @@
   <app-card>
     <div class="card-header">
       @if (isEditing) {
-        <label for="{{ 'movie_' + movie().id + 'name' }}">Имя</label>
+        <div>
+          <label for="{{ 'movie_' + movie().id + 'name' }}">Имя</label>
+        </div>
 
         <input
           pInputText
@@ -20,9 +22,10 @@
 
     <div class="card-body">
       @if (isEditing) {
-        <label for="{{ 'movie_' + movie().id + 'isOnline' }}">Онлайн</label>
+        <label for="{{ 'movie_' + movie().id + 'isOnline' }}">Онлайн:</label>
 
         <p-checkbox
+          id="{{ 'movie_' + movie().id + 'isOnline' }}"
           inputId="{{ 'movie_' + movie().id + 'isOnline' }}"
           binary="true"
           formControlName="isOnline"
@@ -47,7 +50,7 @@
           icon="pi pi-check"
           size="small"
           variant="outlined"
-          aria-label="Delete item"
+          aria-label="Save item"
         ></p-button>
       } @else {
         <p-button

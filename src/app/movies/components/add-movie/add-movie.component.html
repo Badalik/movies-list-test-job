@@ -1,0 +1,34 @@
+<form [formGroup]="formGroup">
+  <app-card>
+    <div class="card-header">
+      <div>
+        <label for="movie_new_name">Имя</label>
+      </div>
+
+      <input
+        pInputText
+        id="movie_new_name"
+        formControlName="name"
+      />
+    </div>
+
+    <div class="card-body">
+      <label for="movie_new_isOnline">Онлайн:</label>
+
+      <p-checkbox
+        id="movie_new_isOnline"
+        inputId="movie_new_isOnline"
+        binary="true"
+        formControlName="isOnline"
+      />
+    </div>
+
+    <div class="card-actions">
+      <p-button
+        (click)="saveMovie()"
+        label="Сохранить"
+        variant="outlined"
+      ></p-button>
+    </div>
+  </app-card>
+</form>

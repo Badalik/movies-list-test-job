@@ -5,12 +5,14 @@ import { debounceTime, distinctUntilChanged, filter, map, switchMap } from 'rxjs
 import { Button } from 'primeng/button';
 import { InputText } from 'primeng/inputtext';
 
-import { MovieApiResponse } from '@core/models';
+import { MovieApiCreateRequest, MovieApiResponse } from '@core/models';
 import { ApiMoviesService } from '@core/services/api-movies.service';
 
+import { AddMovieComponent } from '@movies/components/add-movie';
 import { MovieComponent } from '@movies/components/movie';
 
 import { ContainerComponent } from '@shared/components/container';
+import { HeadingComponent } from '@shared/components/heading';
 
 @Component({
   selector: 'app-movies-list',
@@ -21,6 +23,8 @@ import { ContainerComponent } from '@shared/components/container';
     MovieComponent,
     ContainerComponent,
     Button,
+    AddMovieComponent,
+    HeadingComponent,
   ],
   templateUrl: './movies-list.component.html',
   styleUrl: './movies-list.component.scss',
@@ -51,8 +55,14 @@ export class MoviesListComponent implements OnInit {
       });
   }
 
-  protected addMovie(): void {
+  protected toggleAdding(): void {
     this.isAdding = true;
+  }
+
+  protected addMovie(movie: MovieApiCreateRequest): void {
+    this._apiMoviesService.addMovie(movie);
+
+    this.isAdding = false;
   }
 
 }

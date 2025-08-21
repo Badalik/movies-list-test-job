@@ -3,8 +3,17 @@
 
 header {
   margin-bottom: functions.to-rem(30px);
+}
+
+.toolbar {
+  margin-top: functions.to-rem(30px);
   display: flex;
   gap: functions.to-rem(16px);
+}
+
+.new {
+  margin-top: functions.to-rem(30px);
+  margin-bottom: functions.to-rem(30px);
 }
 
 .search {

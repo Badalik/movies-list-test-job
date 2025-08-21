@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject, first, Observable, of, tap } from 'rxjs';
 
-import { MovieApiResponse, MovieUpdateApiRequest } from '@core/models';
+import { MovieApiCreateRequest, MovieApiResponse, MovieUpdateApiRequest } from '@core/models';
 import { cleanObject } from '@core/utils/utils';
 
 @Injectable({
@@ -49,12 +49,13 @@ export class ApiMoviesService {
     return of(null);
   }
 
-  public addMovie(name: string): number {
+  public addMovie(createdMovie: MovieApiCreateRequest): number {
     const movies = this._moviesList$.getValue();
+
     const newMovie = {
       id: movies.length + 1,
-      name,
-      isOnline: false,
+      name: createdMovie.name,
+      isOnline: createdMovie.isOnline,
     };
 
     this._moviesList$.next([...movies, newMovie]);

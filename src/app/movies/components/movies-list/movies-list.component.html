@@ -1,29 +1,40 @@
 <app-container mode="center">
   <header>
-    <div class="search">
-      <input
-        pInputText
-        [formControl]="searchControl"
-        placeholder="Поиск"
-        aria-describedby="search by list item name"
-      />
-    </div>
+    <app-heading
+      [h]="2"
+      text="Топ фильмов по версии бабы Кати"
+      mode="bordered bordered_2"
+    ></app-heading>
 
-    <p-button
-      (click)="addMovie()"
-      label="Добавить фильм"
-      variant="outlined"
-    ></p-button>
+    <div class="toolbar">
+      <div class="search">
+        <input
+          pInputText
+          [formControl]="searchControl"
+          placeholder="Поиск"
+          aria-describedby="search by list item name"
+        />
+      </div>
+
+      <p-button
+        (click)="toggleAdding()"
+        label="Добавить фильм"
+        variant="outlined"
+      ></p-button>
+    </div>
   </header>
+
+  @if (isAdding) {
+    <div class="new">
+      <app-add-movie
+        (valueChanged)="addMovie($event)"
+      ></app-add-movie>
+    </div>
+  }
 </app-container>
 
 <app-container mode="full">
   <ul>
-    @if (isAdding) {
-      <li>
-      </li>
-    }
-
     @for (item of list(); track item.id) {
       <li>
         <app-movie
