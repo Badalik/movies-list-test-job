@@ -1,0 +1,31 @@
+@use 'abstracts/functions';
+@use 'abstracts/variables';
+
+header {
+  margin-bottom: functions.to-rem(30px);
+  display: flex;
+  gap: functions.to-rem(16px);
+}
+
+.search {
+  flex: 1;
+  width: 100%;
+}
+
+input {
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: functions.to-rem(25px);
+}
+
+li {
+  width: functions.to-rem(300px);
+}
+
+a {
+  color: variables.$color-text;
+}

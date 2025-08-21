@@ -1,0 +1,17 @@
+@use 'abstracts/functions';
+
+.content {
+  display: flex;
+  overflow-y: auto;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  padding-top: functions.to-rem(30px);
+  padding-bottom: functions.to-rem(40px);
+  display: flex;
+  overflow-y: auto;
+  flex-direction: column;
+  flex: 1;
+}

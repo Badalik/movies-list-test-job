@@ -1,0 +1,32 @@
+@use 'sass:map';
+@use 'sass:string';
+@use './variables';
+
+@mixin responsive($mode: screen, $from: false, $to: false, $extra: ()) {
+  @each $key in ($from, $to) {
+    @if $key and not map.has-key(variables.$break-points, $key) {
+      @error 'Available values for ($from, $to) args are: #{map.keys(variables.$break-points)}';
+    };
+  };
+
+  $conditions: $mode;
+
+  @each $key, $value in (
+    min-width: $from,
+    max-width: $to,
+  ) {
+    @if $value {
+      $modifier: if($key == 'max-width', 0px, + 1px);
+      $condition: ' and (#{$key}: #{map.get(variables.$break-points, $value) - $modifier})';
+      $conditions: string.insert($conditions, $condition, -1);
+    }
+  }
+
+  @each $key, $value in $extra {
+    $condition: ' and (#{$key}: #{$value})';
+  }
+
+  @media #{$conditions} {
+    @content;
+  }
+}

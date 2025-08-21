@@ -1,0 +1,44 @@
+@use 'primeicons/primeicons.css';
+@use './base/optimize';
+@use './base/typography';
+@use './ui/primeng';
+@use './abstracts/functions';
+
+:root {
+  font-size: var(--font-size);
+
+  --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-proxima: ProximaNovaExCn;
+  --font-size: 16px;
+  --color-bg: #f8f8fb;
+  --color-text: #414859;
+  --color-card-bg: #fff;
+  --color-yellow-rgb: functions.HexToRGB(#ffa515);
+  --color-selection: rgba(#ffa515, 0.7);
+
+  ::selection {
+    background-color: var(--color-selection);
+  }
+
+  &.theme-dark {
+    --color-bg: #343233;
+    --color-text: #efdab9;
+    --color-card-bg: #343233;
+  }
+}
+
+body {
+  overflow: hidden;
+  font-family: var(--font-main), sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+a {
+  text-decoration: none;
+  color: var(--p-primary-500);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

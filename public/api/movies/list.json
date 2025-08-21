@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "2001 год: Космическая одиссея",
+    "isOnline": true
+  },
+  {
+    "id": 2,
+    "name": "Чужой",
+    "isOnline": true
+  },
+  {
+    "id": 3,
+    "name": "Всё о Еве",
+    "isOnline": true
+  },
+  {
+    "id": 4,
+    "name": "Амадей",
+    "isOnline": true
+  },
+  {
+    "id": 5,
+    "name": "Амели",
+    "isOnline": true
+  },
+  {
+    "id": 6,
+    "name": "Американские граффити",
+    "isOnline": true
+  },
+  {
+    "id": 7,
+    "name": "Энни Холл",
+    "isOnline": true
+  },
+  {
+    "id": 8,
+    "name": "Квартира",
+    "isOnline": true
+  },
+  {
+    "id": 9,
+    "name": "Апокалипсис сегодня",
+    "isOnline": true
+  },
+  {
+    "id": 10,
+    "name": "Аватар",
+    "isOnline": true
+  },
+  {
+    "id": 11,
+    "name": "Кармелита",
+    "isOnline": true
+  },
+  {
+    "id": 12,
+    "name": "Клон",
+    "isOnline": true
+  }
+]

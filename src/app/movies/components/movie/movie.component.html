@@ -1,0 +1,63 @@
+<form [formGroup]="formGroup">
+  <app-card>
+    <div class="card-header">
+      @if (isEditing) {
+        <label for="{{ 'movie_' + movie().id + 'name' }}">Имя</label>
+
+        <input
+          pInputText
+          id="{{ 'movie_' + movie().id + 'name' }}"
+          formControlName="name"
+        />
+      } @else {
+        <app-heading
+          [h]="3"
+          [text]="movie().name"
+          mode="bordered bordered_3"
+        ></app-heading>
+      }
+    </div>
+
+    <div class="card-body">
+      @if (isEditing) {
+        <label for="{{ 'movie_' + movie().id + 'isOnline' }}">Онлайн</label>
+
+        <p-checkbox
+          inputId="{{ 'movie_' + movie().id + 'isOnline' }}"
+          binary="true"
+          formControlName="isOnline"
+        />
+      } @else {
+        Онлайн: {{ movie().isOnline ? 'да' : 'нет' }}
+      }
+    </div>
+
+    <div class="card-actions">
+      <p-button
+        (click)="deleteMovie(movie().id)"
+        icon="pi pi-trash"
+        size="small"
+        variant="outlined"
+        aria-label="Delete item"
+      ></p-button>
+
+      @if (isEditing) {
+        <p-button
+          (click)="saveMovie()"
+          icon="pi pi-check"
+          size="small"
+          variant="outlined"
+          aria-label="Delete item"
+        ></p-button>
+      } @else {
+        <p-button
+          (click)="toggleEditing()"
+          icon="pi pi-pencil"
+          size="small"
+          variant="outlined"
+          aria-label="Delete item"
+        ></p-button>
+      }
+    </div>
+  </app-card>
+</form>

@@ -1,0 +1,10 @@
+<p-select
+  [options]="options"
+  [(ngModel)]="value"
+  (onChange)="change($event.value)"
+  size="small"
+>
+  <ng-template #selectedItem let-selectedOption>
+    <span>{{ selectedOption }}</span>
+  </ng-template>
+</p-select>

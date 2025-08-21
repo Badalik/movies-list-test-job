@@ -1,0 +1,17 @@
+@use 'abstracts/functions';
+
+.content {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right {
+  display: flex;
+  gap: 1rem;
+}
+
+.lang {
+  width: functions.to-rem(70px);
+}

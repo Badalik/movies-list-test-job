@@ -1,0 +1,35 @@
+<app-container mode="center">
+  <header>
+    <div class="search">
+      <input
+        pInputText
+        [formControl]="searchControl"
+        placeholder="Поиск"
+        aria-describedby="search by list item name"
+      />
+    </div>
+
+    <p-button
+      (click)="addMovie()"
+      label="Добавить фильм"
+      variant="outlined"
+    ></p-button>
+  </header>
+</app-container>
+
+<app-container mode="full">
+  <ul>
+    @if (isAdding) {
+      <li>
+      </li>
+    }
+
+    @for (item of list(); track item.id) {
+      <li>
+        <app-movie
+          [movie]="item"
+        ></app-movie>
+      </li>
+    }
+  </ul>
+</app-container>

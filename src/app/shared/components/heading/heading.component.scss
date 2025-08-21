@@ -1,0 +1,43 @@
+@use 'abstracts/functions';
+@use 'abstracts/variables';
+
+:host {
+  display: block;
+  font-family: variables.$font-proxima;
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: 1px;
+  color: variables.$color-text;
+
+  &.bordered {
+    border-bottom: 1px solid variables.$color-primary;
+
+    &_1,
+    &_2 {
+      padding-bottom: functions.to-rem(20px);
+    }
+
+    &_3,
+    &_4,
+    &_5,
+    &_6 {
+      padding-bottom: functions.to-rem(10px);
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: functions.to-rem(38px);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: functions.to-rem(22px);
+}

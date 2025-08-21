@@ -1,0 +1,31 @@
+@use 'abstracts/functions';
+@use 'abstracts/variables';
+
+.p-button {
+  font-family: variables.$font-proxima;
+}
+
+.p-button-label {
+  position: relative;
+  bottom: -1px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.p-button-icon-only {
+  &:not(.p-button-sm) {
+    height: functions.to-rem(38px);
+  }
+
+  &.p-button-sm {
+    height: functions.to-rem(30px);
+
+    --p-button-icon-only-width: 1.875rem;
+  }
+}
+
+.p-button-sm {
+  &:not(.p-button-icon-only) {
+    line-height: functions.to-rem(16px);
+  }
+}

@@ -1,0 +1,11 @@
+@use 'abstracts/functions';
+
+label {
+  margin-bottom: functions.to-rem(10px);
+  display: block;
+}
+
+.card-actions {
+  display: flex;
+  gap: functions.to-rem(16px);
+}

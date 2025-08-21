@@ -1,0 +1,11 @@
+@let icon = icon$ | async;
+
+@if (icon !== null) {
+  <p-button
+    [icon]="icon"
+    (click)="toggle()"
+    size="small"
+    variant="outlined"
+    aria-label="Theme color mode"
+  ></p-button>
+}

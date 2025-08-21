@@ -1,0 +1,26 @@
+@use 'abstracts/functions';
+
+:host {
+  display: block;
+
+  &.full {
+    padding-right: functions.to-rem(32px);
+    padding-left: functions.to-rem(32px);
+    width: 100%;
+  }
+
+  &.center {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: functions.to-rem(25px);
+    padding-left: functions.to-rem(25px);
+    width: functions.to-rem(790px);
+  }
+
+  &.h100 {
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    height: 100%;
+  }
+}
