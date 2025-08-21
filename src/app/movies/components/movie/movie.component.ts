@@ -1,6 +1,7 @@
 import { Component, DestroyRef, inject, model, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
+import { TranslatePipe } from '@ngx-translate/core';
 import { Button } from 'primeng/button';
 import { Checkbox } from 'primeng/checkbox';
 import { InputText } from 'primeng/inputtext';
@@ -20,6 +21,7 @@ import { HeadingComponent } from '@shared/components/heading';
     ReactiveFormsModule,
     InputText,
     Checkbox,
+    TranslatePipe,
   ],
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.scss',

@@ -2,7 +2,7 @@
   <app-card>
     <div class="card-header">
       <div>
-        <label for="movie_new_name">Имя</label>
+        <label for="movie_new_name">{{ 'app.name' | translate }}</label>
       </div>
 
       <input
@@ -13,7 +13,7 @@
     </div>
 
     <div class="card-body">
-      <label for="movie_new_isOnline">Онлайн:</label>
+      <label for="movie_new_isOnline">{{ 'app.online' | translate }}:</label>
 
       <p-checkbox
         id="movie_new_isOnline"
@@ -26,7 +26,7 @@
     <div class="card-actions">
       <p-button
         (click)="saveMovie()"
-        label="Сохранить"
+        [label]="'app.save' | translate"
         variant="outlined"
       ></p-button>
     </div>

@@ -2,7 +2,7 @@
   <header>
     <app-heading
       [h]="2"
-      text="Топ фильмов по версии бабы Кати"
+      [text]="'app.moviesListTitle' | translate"
       mode="bordered bordered_2"
     ></app-heading>
 
@@ -11,14 +11,14 @@
         <input
           pInputText
           [formControl]="searchControl"
-          placeholder="Поиск"
+          [placeholder]="'app.search' | translate"
           aria-describedby="search by list item name"
         />
       </div>
 
       <p-button
         (click)="toggleAdding()"
-        label="Добавить фильм"
+        [label]="'app.addMovie' | translate"
         variant="outlined"
       ></p-button>
     </div>

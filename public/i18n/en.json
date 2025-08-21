@@ -1,6 +1,13 @@
 {
   "app": {
-    "check": "Check"
+    "save": "Save",
+    "online": "Online",
+    "moviesListTitle": "Top movies according to baba Katya",
+    "search": "search",
+    "addMovie": "Add movie",
+    "name": "Name",
+    "yes": "yes",
+    "no": "no"
   },
   "primeng": {
     "accept": "Yes",

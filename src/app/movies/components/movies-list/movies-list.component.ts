@@ -13,6 +13,7 @@ import { MovieComponent } from '@movies/components/movie';
 
 import { ContainerComponent } from '@shared/components/container';
 import { HeadingComponent } from '@shared/components/heading';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-movies-list',
@@ -25,6 +26,7 @@ import { HeadingComponent } from '@shared/components/heading';
     Button,
     AddMovieComponent,
     HeadingComponent,
+    TranslatePipe,
   ],
   templateUrl: './movies-list.component.html',
   styleUrl: './movies-list.component.scss',

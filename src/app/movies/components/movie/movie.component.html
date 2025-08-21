@@ -3,7 +3,7 @@
     <div class="card-header">
       @if (isEditing) {
         <div>
-          <label for="{{ 'movie_' + movie().id + 'name' }}">Имя</label>
+          <label for="{{ 'movie_' + movie().id + 'name' }}">{{ 'app.name' | translate }}</label>
         </div>
 
         <input
@@ -22,7 +22,7 @@
 
     <div class="card-body">
       @if (isEditing) {
-        <label for="{{ 'movie_' + movie().id + 'isOnline' }}">Онлайн:</label>
+        <label for="{{ 'movie_' + movie().id + 'isOnline' }}">{{ 'app.online' | translate }}:</label>
 
         <p-checkbox
           id="{{ 'movie_' + movie().id + 'isOnline' }}"
@@ -31,7 +31,7 @@
           formControlName="isOnline"
         />
       } @else {
-        Онлайн: {{ movie().isOnline ? 'да' : 'нет' }}
+        {{ 'app.online' | translate }}: {{ movie().isOnline ? ('app.yes' | translate) : ('app.no' | translate) }}
       }
     </div>
 
