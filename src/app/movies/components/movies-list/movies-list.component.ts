@@ -43,12 +43,12 @@ export class MoviesListComponent implements OnInit {
     this.searchControl.valueChanges
       .pipe(
         filter((value) => {
-          return value !== null && value.trim().length > 2;
+          return value === null || !value.trim().length || value.trim().length > 2;
         }),
         debounceTime(500),
         distinctUntilChanged(),
-        map((value) => (value as string).toLowerCase()),
-        switchMap((value) => this._apiMoviesService.getMovies(value as string)),
+        map((value) => value === null ? value : value.toLowerCase()),
+        switchMap((value) => this._apiMoviesService.getMovies(value)),
       )
       .subscribe((items) => {
         this.list.set(items);
