@@ -2,6 +2,7 @@ import { Component, inject, model, OnInit } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, filter, map, switchMap } from 'rxjs';
 
+import { TranslatePipe } from '@ngx-translate/core';
 import { Button } from 'primeng/button';
 import { InputText } from 'primeng/inputtext';
 
@@ -13,7 +14,6 @@ import { MovieComponent } from '@movies/components/movie';
 
 import { ContainerComponent } from '@shared/components/container';
 import { HeadingComponent } from '@shared/components/heading';
-import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-movies-list',

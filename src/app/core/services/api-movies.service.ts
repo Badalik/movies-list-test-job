@@ -3,7 +3,6 @@ import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject, first, Observable, of, tap } from 'rxjs';
 
 import { MovieApiCreateRequest, MovieApiResponse, MovieUpdateApiRequest } from '@core/models';
-import { cleanObject } from '@core/utils/utils';
 
 @Injectable({
   providedIn: 'root',
@@ -74,9 +73,12 @@ export class ApiMoviesService {
     const foundMovie = movies.find((p) => p.id === id);
 
     if (typeof foundMovie !== 'undefined') {
-      for (const [key, value] of Object.entries(cleanObject<MovieUpdateApiRequest>(updatedMovie))) {
-        if (key !== 'id') {
-          // @ts-ignore
+      for (const [key, value] of Object.entries(updatedMovie)) {
+        if (key === 'name' && typeof value === 'string') {
+          foundMovie[key] = value;
+        }
+
+        if (key === 'isOnline' && typeof value === 'boolean') {
           foundMovie[key] = value;
         }
       }

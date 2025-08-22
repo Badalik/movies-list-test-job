@@ -1,6 +1,7 @@
 import { Component, output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
+import { TranslatePipe } from '@ngx-translate/core';
 import { Button } from 'primeng/button';
 import { Checkbox } from 'primeng/checkbox';
 import { InputText } from 'primeng/inputtext';
@@ -8,7 +9,6 @@ import { InputText } from 'primeng/inputtext';
 import { MovieApiCreateRequest } from '@core/models';
 
 import { CardComponent } from '@shared/components/card';
-import { TranslatePipe } from '@ngx-translate/core';
 
 interface CreateMovieForm {
   name: FormControl<string | null>;
