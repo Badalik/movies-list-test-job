@@ -10,18 +10,18 @@ import { MovieApiResponse, MovieUpdateApiRequest } from '@core/models';
 import { ApiMoviesService } from '@core/services/api-movies.service';
 
 import { CardComponent } from '@shared/components/card';
-import { HeadingComponent } from '@shared/components/heading';
+import { CardHeaderComponent } from '@shared/components/card-header';
 
 @Component({
   selector: 'app-movie',
   imports: [
     CardComponent,
-    HeadingComponent,
     Button,
     ReactiveFormsModule,
     InputText,
     Checkbox,
     TranslatePipe,
+    CardHeaderComponent,
   ],
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.scss',

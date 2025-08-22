@@ -1,0 +1,9 @@
+@if (isEditing()) {
+  <ng-content></ng-content>
+} @else {
+  <app-heading
+    [h]="3"
+    [text]="title()"
+    mode="bordered bordered_3"
+  ></app-heading>
+}

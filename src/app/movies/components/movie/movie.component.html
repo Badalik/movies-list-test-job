@@ -1,6 +1,21 @@
 <form [formGroup]="formGroup">
   <app-card>
-    <div class="card-header">
+    <app-card-header
+      [title]="movie().name"
+      [isEditing]="isEditing"
+    >
+      <div>
+        <label for="{{ 'movie_' + movie().id + 'name' }}">{{ 'app.name' | translate }}</label>
+      </div>
+
+      <input
+        pInputText
+        id="{{ 'movie_' + movie().id + 'name' }}"
+        formControlName="name"
+      />
+    </app-card-header>
+
+    <!--<div class="card-header">
       @if (isEditing) {
         <div>
           <label for="{{ 'movie_' + movie().id + 'name' }}">{{ 'app.name' | translate }}</label>
@@ -18,7 +33,7 @@
           mode="bordered bordered_3"
         ></app-heading>
       }
-    </div>
+    </div>-->
 
     <div class="card-body">
       @if (isEditing) {
