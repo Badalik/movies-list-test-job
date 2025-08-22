@@ -15,26 +15,6 @@
       />
     </app-card-header>
 
-    <!--<div class="card-header">
-      @if (isEditing) {
-        <div>
-          <label for="{{ 'movie_' + movie().id + 'name' }}">{{ 'app.name' | translate }}</label>
-        </div>
-
-        <input
-          pInputText
-          id="{{ 'movie_' + movie().id + 'name' }}"
-          formControlName="name"
-        />
-      } @else {
-        <app-heading
-          [h]="3"
-          [text]="movie().name"
-          mode="bordered bordered_3"
-        ></app-heading>
-      }
-    </div>-->
-
     <div class="card-body">
       @if (isEditing) {
         <label for="{{ 'movie_' + movie().id + 'isOnline' }}">{{ 'app.online' | translate }}:</label>

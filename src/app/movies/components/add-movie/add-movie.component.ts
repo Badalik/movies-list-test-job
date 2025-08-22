@@ -9,6 +9,7 @@ import { InputText } from 'primeng/inputtext';
 import { MovieApiCreateRequest } from '@core/models';
 
 import { CardComponent } from '@shared/components/card';
+import { CardHeaderComponent } from '@shared/components/card-header';
 
 interface CreateMovieForm {
   name: FormControl<string | null>;
@@ -24,6 +25,7 @@ interface CreateMovieForm {
     Checkbox,
     InputText,
     TranslatePipe,
+    CardHeaderComponent,
   ],
   templateUrl: './add-movie.component.html',
   styleUrl: './add-movie.component.scss',
