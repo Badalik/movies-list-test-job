@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
 import { MOVIE_TOKEN, moviePageProviders } from './movie-page.providers';
 
@@ -8,6 +8,7 @@ import { MOVIE_TOKEN, moviePageProviders } from './movie-page.providers';
   providers: moviePageProviders,
   templateUrl: './movie-page.component.html',
   styleUrl: './movie-page.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MoviePageComponent {
 

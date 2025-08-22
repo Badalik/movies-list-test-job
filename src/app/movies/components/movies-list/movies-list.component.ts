@@ -1,4 +1,4 @@
-import { Component, inject, model, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, model, OnInit } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, filter, map, switchMap } from 'rxjs';
 
@@ -30,6 +30,7 @@ import { HeadingComponent } from '@shared/components/heading';
   ],
   templateUrl: './movies-list.component.html',
   styleUrl: './movies-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MoviesListComponent implements OnInit {
 

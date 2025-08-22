@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
 import { MoviesListComponent } from '@movies/components/movies-list';
 
@@ -14,6 +14,7 @@ import { MOVIES_LIST_TOKEN, moviesListPageProviders } from './movies-list-page.p
   providers: moviesListPageProviders,
   templateUrl: './movies-list-page.component.html',
   styleUrl: './movies-list-page.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MoviesListPageComponent {
 

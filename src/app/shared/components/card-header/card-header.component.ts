@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 import { HeadingComponent } from '@shared/components/heading';
 
@@ -9,6 +9,7 @@ import { HeadingComponent } from '@shared/components/heading';
   ],
   templateUrl: './card-header.component.html',
   styleUrl: './card-header.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardHeaderComponent {
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { ContainerComponent } from '@shared/components/container/container.component';
 
@@ -16,5 +16,6 @@ import { ThemeSwitcherComponent } from '../theme-switcher';
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {}

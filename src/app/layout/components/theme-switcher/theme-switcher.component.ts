@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
 import { Button } from 'primeng/button';
 
@@ -13,6 +13,7 @@ import { ThemeModeService } from '@core/services/theme-mode.service';
   ],
   templateUrl: './theme-switcher.component.html',
   styleUrl: './theme-switcher.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ThemeSwitcherComponent {
 

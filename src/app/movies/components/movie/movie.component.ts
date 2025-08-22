@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, model, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, inject, model, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { TranslatePipe } from '@ngx-translate/core';
@@ -25,6 +25,7 @@ import { CardHeaderComponent } from '@shared/components/card-header';
   ],
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieComponent implements OnInit {
 

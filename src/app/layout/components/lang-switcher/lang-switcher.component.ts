@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { TranslateService } from '@ngx-translate/core';
@@ -16,6 +16,7 @@ import { LangService } from '@core/services/lang.service';
   ],
   templateUrl: './lang-switcher.component.html',
   styleUrl: './lang-switcher.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LangSwitcherComponent implements OnInit {
 

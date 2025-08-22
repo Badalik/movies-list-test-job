@@ -1,4 +1,4 @@
-import { Component, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { TranslatePipe } from '@ngx-translate/core';
@@ -27,6 +27,7 @@ interface CreateMovieForm {
   ],
   templateUrl: './add-movie.component.html',
   styleUrl: './add-movie.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AddMovieComponent {
 
